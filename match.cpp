@@ -4,7 +4,9 @@
 
 using namespace std;
 
-static int smatch(const string& str, const string& pat)
+namespace {
+
+int smatch(const string& str, const string& pat)
 {
     auto score = 1, dist = 0;
     auto si = str.cbegin();
@@ -20,6 +22,8 @@ static int smatch(const string& str, const string& pat)
     }
     return pi == pat.cend() ? score : 0;
 }
+
+} // namespace
 
 vector<wstr>::iterator match(vector<wstr>::iterator begin, vector<wstr>::iterator end, const string& pattern)
 {
